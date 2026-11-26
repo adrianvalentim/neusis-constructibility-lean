@@ -1,6 +1,8 @@
-# NeusisLean
+# Complete Characterization of Neusis Constructibility: A Lean 4 Proof Settling a 400-Year-Old Problem Since Viète (1593)
 
-A complete Lean 4 formalization resolving the **Neusis Constructibility Problem** for planar constructions using a compass, straightedge, and strictly point-verging unit-mark neusis (twice-notched straightedge with mark distance `1`), starting from `(0, 0)` and `(1, 0)`.
+A complete, axiom-clean Lean 4 formalization resolving the **Neusis Constructibility Problem** for planar constructions using a compass, straightedge, and strictly point-verging unit-mark neusis (twice-notched straightedge with mark distance `1`), starting from `(0, 0)` and `(1, 0)`.
+
+In *Supplementum geometriae* (1593), François Viète adopted the neusis as a geometric postulate and showed that it solves all cubic and quartic problems. After Gauss (1801) and Wantzel (1837) characterized compass-and-straightedge constructibility, the analogous question for compass and marked ruler remained open: Baragar (2002) established the degree-`≤ 6` tower necessity bound (ruling out the regular 23-gon), and Benjamin and Snyder (2014) constructed the regular 11-gon, leaving the complete field characterization, general quintics, and regular polygons such as the 25-, 31-, 41-, 61-, 101-, and 125-gons open. This repository formally proves that Baragar's degree-`≤ 6` condition is both necessary and sufficient.
 
 ## Main Theorems
 

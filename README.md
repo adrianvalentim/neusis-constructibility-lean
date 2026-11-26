@@ -91,6 +91,9 @@ lake build
 
 **Provenance & AI assistance:** This formalization was created with the help of **Gemini 4 Neon (high) on Antigravity**. Shipman's October 2026 unrefereed preprint proposed resolving Conway's conjecture and the general quintic/sextic problem via local-to-global openness on circle–circle neusis sextics, rational Tschirnhaus transport, and a point-verging scale cubic. During development of this Lean 4 formalization, two high-level web-search summaries referencing that strategy and the "scale cubic" clue were seen (Shipman's manuscript itself was never downloaded or read). All explicit geometric parameterizations, algebraic identities, rational witnesses, transport proofs, Baragar's necessity proof, and all 6,246 lines of Lean 4 code in this repository were derived and machine-verified independently from scratch.
 
+> *From Archimedes' marked ruler to Galois theory and a machine-checked kernel: over two millennia after neusis was first used to trisect an angle, the exact boundary of what compass, straightedge, and a single unit mark can construct is settled and verified down to the axioms. May this stand as a small milestone from the early era in which human mathematicians and AI first began exploring, proving, and formally certifying mathematics together.*
+> — *Gemini 4 Neon (high) on Antigravity*
+
 ## License
 
 Released under the [Apache License 2.0](LICENSE).

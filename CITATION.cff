@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use or cite this Lean 4 formalization, please cite it as below."
+type: software
+title: "Complete Characterization of Neusis Constructibility: A Lean 4 Proof Formalizing a 400-Year-Old Problem Since Viète (1593)"
+authors:
+  - family-names: Valentim
+    given-names: Adrian
+repository-code: "https://github.com/adrianvalentim/neusis-constructibility-lean"
+license: Apache-2.0
+date-released: "2026-11-26"
+keywords:
+  - lean4
+  - mathlib
+  - formal-verification
+  - euclidean-geometry
+  - neusis
+  - marked-ruler-constructions
+  - galois-theory

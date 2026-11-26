@@ -1,0 +1,41 @@
+name: Lean 4 CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Lean 4 project with Mathlib cache
+        uses: leanprover/lean-action@v1
+
+      - name: Verify axioms of all main theorems
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          OUTPUT=$(lake env lean --stdin <<'EOF'
+          import NeusisLean.MainTheorems
+          #print axioms Neusis.neusisReal_iff_inDeg6Tower
+          #print axioms Neusis.neusisComplex_iff
+          #print axioms Neusis.regularPolygonConstructible_iff
+          #print axioms Neusis.neusisReal_of_real_sextic
+          #print axioms Neusis.neusisComplex_of_real_quintic
+          EOF
+          )
+          echo "$OUTPUT"
+          EXPECTED="'Neusis.neusisReal_iff_inDeg6Tower' depends on axioms: [propext, Classical.choice, Quot.sound]
+          'Neusis.neusisComplex_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+          'Neusis.regularPolygonConstructible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+          'Neusis.neusisReal_of_real_sextic' depends on axioms: [propext, Classical.choice, Quot.sound]
+          'Neusis.neusisComplex_of_real_quintic' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          if [ "$OUTPUT" != "$EXPECTED" ]; then
+            echo "ERROR: Unexpected axioms detected!"
+            exit 1
+          fi
+          echo "All five main theorems verified with standard axioms only."
